@@ -1,4 +1,6 @@
 ---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+
 import Footer from "../components/Footer.astro";
 
 import "../styles/sass/main.scss";
@@ -20,6 +22,9 @@ const { title } = Astro.props;
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900&display=swap"
+    />
     <title>{title}</title>
   </head>
   <body>

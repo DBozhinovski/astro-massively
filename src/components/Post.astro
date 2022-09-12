@@ -1,0 +1,29 @@
+---
+import { Image } from "@astrojs/image/components";
+import { format } from "date-fns";
+
+export interface Props {
+  title: string;
+  image?: string;
+  date: Date;
+  summary: string;
+  alt?: string;
+  contents: string;
+}
+
+const { title, image, date, summary, alt, contents } = Astro.props;
+---
+
+<section class="post">
+  <header class="major">
+    <span class="date">
+      {format(date, "yyyy-MM-dd")}
+    </span>
+    <h1 set:html={title}></h1>
+    <p set:html={summary}></p>
+  </header>
+  <div class="image main">
+    <Image src={image} width={896} alt={alt || ""} />
+  </div>
+  {contents}
+</section>
