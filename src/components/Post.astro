@@ -25,5 +25,5 @@ const { title, image, date, summary, alt, contents } = Astro.props;
   <div class="image main">
     <Image src={image} width={896} alt={alt || ""} />
   </div>
-  {contents}
+  <Fragment set:html={contents} />
 </section>
