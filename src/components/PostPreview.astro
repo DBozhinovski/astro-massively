@@ -1,0 +1,36 @@
+---
+import { Image } from "@astrojs/image/components";
+import { format } from "date-fns";
+
+export interface Props {
+  title: string;
+  image?: string;
+  date: Date;
+  summary: string;
+  alt?: string;
+  featured?: boolean;
+}
+
+const { title, image, date, summary, alt, featured } = Astro.props;
+---
+
+<article class={featured ? "post featured" : ""}>
+  <header class={featured ? "major" : ""}>
+    <span class="date">
+      {format(date, "yyyy-MM-dd")}
+    </span>
+    <h2>
+      <a href="#" set:html={title}></a>
+    </h2>
+    {featured && <p set:html={summary} />}
+  </header>
+  <a href="#" class={featured ? "image main" : "image fit"}>
+    <Image src={image} width={featured ? 896 : 448} alt={alt || ""} />
+  </a>
+  {!featured && <p>{summary}</p>}
+  <ul class="actions special">
+    <li>
+      <a href="#" class={featured ? "button large" : "button"}>Full Story</a>
+    </li>
+  </ul>
+</article>

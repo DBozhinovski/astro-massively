@@ -10,6 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.2.1"
+    "@astrojs/image": "^0.7.0",
+    "astro": "^1.2.1",
+    "date-fns": "^2.29.2"
+  },
+  "devDependencies": {
+    "sass": "^1.54.9"
   }
 }

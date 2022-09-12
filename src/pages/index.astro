@@ -1,96 +1,169 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { Image } from "@astrojs/image/components";
+
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Pagination from "../components/Pagination.astro";
+import PostPreview from "../components/PostPreview.astro";
+
+import img1 from "../images/pic01.jpg";
+import img2 from "../images/pic02.jpg";
+import img3 from "../images/pic03.jpg";
+import img4 from "../images/pic04.jpg";
+import img5 from "../images/pic05.jpg";
+import img6 from "../images/pic06.jpg";
+import img7 from "../images/pic07.jpg";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Massively by HTML5 UP">
+  <!-- Intro -->
+  <div id="intro">
+    <h1>
+      This is<br />
+      Massively
+    </h1>
+    <p>
+      A free, fully responsive HTML5 + CSS3 site template designed by <a
+        href="https://twitter.com/ajlkn">@ajlkn</a
+      > for <a href="https://html5up.net">HTML5 UP</a><br />
+      and released for free under the <a href="https://html5up.net/license"
+        >Creative Commons license</a
+      >.
+    </p>
+    <ul class="actions">
+      <li>
+        <a href="#header" class="button icon solid solo fa-arrow-down scrolly"
+          >Continue</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="logo">Massively</a>
+  </header>
+
+  <Navigation />
+
+  <!-- Main -->
+  <div id="main">
+    <!-- Featured Post -->
+    <PostPreview
+      title="And this is a <br /> massive headline"
+      image={img1}
+      date={new Date("2017-04-25")}
+      summary={"Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br/>amet nullam sed etiam veroeros."}
+      alt="placeholder 1"
+      featured
+    />
+
+    <!-- Posts -->
+    <section class="posts">
+      <PostPreview
+        title="Sed magna <br/> ipsum faucibus"
+        image={img2}
+        date={new Date("2017-04-24")}
+        alt="placeholder 2"
+        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
+      />
+      <PostPreview
+        title="Primis eget <br/> imperdiet lorem"
+        image={img3}
+        date={new Date("2017-04-22")}
+        alt="placeholder 3"
+        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
+      />
+      <article>
+        <header>
+          <span class="date">April 18, 2017</span>
+          <h2>
+            <a href="#"
+              >Ante mattis<br />
+              interdum dolor</a
+            >
+          </h2>
+        </header>
+        <a href="#" class="image fit">
+          <Image src={img4} width={448} alt="placeholder 4" />
+        </a>
+        <p>
+          Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis
+          sagittis magna etiam.
+        </p>
+        <ul class="actions special">
+          <li><a href="#" class="button">Full Story</a></li>
+        </ul>
+      </article>
+      <article>
+        <header>
+          <span class="date">April 14, 2017</span>
+          <h2>
+            <a href="#"
+              >Tempus sed<br />
+              nulla imperdiet</a
+            >
+          </h2>
+        </header>
+        <a href="#" class="image fit">
+          <Image src={img5} width={448} alt="placeholder 5" />
+        </a>
+        <p>
+          Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis
+          sagittis magna etiam.
+        </p>
+        <ul class="actions special">
+          <li><a href="#" class="button">Full Story</a></li>
+        </ul>
+      </article>
+      <article>
+        <header>
+          <span class="date">April 11, 2017</span>
+          <h2>
+            <a href="#"
+              >Odio magna<br />
+              sed consectetur</a
+            >
+          </h2>
+        </header>
+        <a href="#" class="image fit">
+          <Image src={img6} width={448} alt="placeholder 6" />
+        </a>
+        <p>
+          Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis
+          sagittis magna etiam.
+        </p>
+        <ul class="actions special">
+          <li><a href="#" class="button">Full Story</a></li>
+        </ul>
+      </article>
+      <article>
+        <header>
+          <span class="date">April 7, 2017</span>
+          <h2>
+            <a href="#"
+              >Augue lorem<br />
+              primis vestibulum</a
+            >
+          </h2>
+        </header>
+        <a href="#" class="image fit">
+          <Image src={img7} width={448} alt="placeholder 7" />
+        </a>
+        <p>
+          Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis
+          sagittis magna etiam.
+        </p>
+        <ul class="actions special">
+          <li><a href="#" class="button">Full Story</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <Pagination />
+  </div>
 </Layout>
-
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
-	h1 {
-		margin: 2rem 0;
-	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
