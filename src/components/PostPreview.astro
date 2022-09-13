@@ -9,9 +9,13 @@ export interface Props {
   summary: string;
   alt?: string;
   featured?: boolean;
+  link: string;
 }
 
-const { title, image, date, summary, alt, featured } = Astro.props;
+const { title, image, date, summary, alt, featured, link } = Astro.props;
+
+// We can't really use the astro image integration otherwise -.-d
+const img = import(/* @vite-ignore */ `../images/${image}`);
 ---
 
 <article class={featured ? "post featured" : ""}>
@@ -20,17 +24,22 @@ const { title, image, date, summary, alt, featured } = Astro.props;
       {format(date, "yyyy-MM-dd")}
     </span>
     <h2>
-      <a href="#" set:html={title}></a>
+      <a href={link} set:html={title}></a>
     </h2>
     {featured && <p set:html={summary} />}
   </header>
-  <a href="#" class={featured ? "image main" : "image fit"}>
-    <Image src={image} width={featured ? 896 : 448} alt={alt || ""} />
+  <a href={link} class={featured ? "image main" : "image fit"}>
+    <Image
+      src={img}
+      width={featured ? 896 : 448}
+      height={!featured && 218}
+      alt={alt || ""}
+    />
   </a>
-  {!featured && <p>{summary}</p>}
+  {!featured && <p set:html={summary} />}
   <ul class="actions special">
     <li>
-      <a href="#" class={featured ? "button large" : "button"}>Full Story</a>
+      <a href={link} class={featured ? "button large" : "button"}>Full Story</a>
     </li>
   </ul>
 </article>

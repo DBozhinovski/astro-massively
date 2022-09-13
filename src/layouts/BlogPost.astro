@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Post from "../components/Post.astro";
+
+const { frontmatter, compiledContent } = Astro.props;
+
+// We can't really use the astro image integration otherwise -.-d
+const image = import(/* @vite-ignore */ `../images/${frontmatter.image}`);
+---
+
+<Layout title={frontmatter.title}>
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="logo">Massively</a>
+  </header>
+
+  <Navigation />
+
+  <!-- Main -->
+  <div id="main">
+    <Post
+      date={new Date(frontmatter.date)}
+      title={frontmatter.title}
+      summary={frontmatter.summary}
+      contents={compiledContent()}
+      image={image as any as string}
+    />
+  </div>
+</Layout>

@@ -4,9 +4,13 @@ import Navigation from "../components/Navigation.astro";
 import Pagination from "../components/Pagination.astro";
 import PostPreview from "../components/PostPreview.astro";
 
-import img1 from "../images/pic01.jpg";
-import img2 from "../images/pic02.jpg";
-import img3 from "../images/pic03.jpg";
+const allPosts = await Astro.glob("./blog/*.md");
+
+allPosts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
+
+const featured = allPosts.shift();
 ---
 
 <Layout title="Massively by HTML5 UP">
@@ -44,58 +48,27 @@ import img3 from "../images/pic03.jpg";
   <div id="main">
     <!-- Featured Post -->
     <PostPreview
-      title="And this is a <br /> massive headline"
-      image={img1}
-      date={new Date("2017-04-25")}
-      summary={"Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br/>amet nullam sed etiam veroeros."}
-      alt="placeholder 1"
+      title={featured?.frontmatter.title || ""}
+      image={featured?.frontmatter.image || ""}
+      date={new Date(featured?.frontmatter.date)}
+      summary={featured?.frontmatter.summary}
+      link={featured?.url || ""}
       featured
     />
 
     <!-- Posts -->
     <section class="posts">
-      <PostPreview
-        title="Sed magna <br/> ipsum faucibus"
-        image={img2}
-        date={new Date("2017-04-24")}
-        alt="placeholder 2"
-        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
-      />
-      <PostPreview
-        title="Primis eget <br/> imperdiet lorem"
-        image={img3}
-        date={new Date("2017-04-22")}
-        alt="placeholder 3"
-        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
-      />
-      <PostPreview
-        title="Sed magna <br/> ipsum faucibus"
-        image={img2}
-        date={new Date("2017-04-24")}
-        alt="placeholder 2"
-        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
-      />
-      <PostPreview
-        title="Primis eget <br/> imperdiet lorem"
-        image={img3}
-        date={new Date("2017-04-22")}
-        alt="placeholder 3"
-        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
-      />
-      <PostPreview
-        title="Sed magna <br/> ipsum faucibus"
-        image={img2}
-        date={new Date("2017-04-24")}
-        alt="placeholder 2"
-        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
-      />
-      <PostPreview
-        title="Primis eget <br/> imperdiet lorem"
-        image={img3}
-        date={new Date("2017-04-22")}
-        alt="placeholder 3"
-        summary={`Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.`}
-      />
+      {
+        allPosts.map((p) => (
+          <PostPreview
+            title={p.frontmatter.title}
+            image={p.frontmatter.image}
+            date={new Date(p.frontmatter.date)}
+            summary={p.frontmatter.summary}
+            link={p.url || ""}
+          />
+        ))
+      }
     </section>
 
     <Pagination />
