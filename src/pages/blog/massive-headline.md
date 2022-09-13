@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "And this is a<br />massive headline"
 summary: "Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />amet nullam sed etiam veroeros."
-date: "2017-04-26"
+pubDate: "2017-04-26"
 image: "pic02.jpg"
 ---
 

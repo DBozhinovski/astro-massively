@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPost.astro"
 title: "This is another<br />Generic Page"
 summary: "Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor amet nullam sed etiam veroeros."
-date: "2017-04-24"
+pubDate: "2017-04-24"
 image: "pic03.jpg"
 ---
 

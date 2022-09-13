@@ -20,7 +20,7 @@ const image = import(/* @vite-ignore */ `../images/${frontmatter.image}`);
   <!-- Main -->
   <div id="main">
     <Post
-      date={new Date(frontmatter.date)}
+      date={new Date(frontmatter.pubDate)}
       title={frontmatter.title}
       summary={frontmatter.summary}
       contents={compiledContent()}

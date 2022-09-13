@@ -7,7 +7,8 @@ import PostPreview from "../components/PostPreview.astro";
 const allPosts = await Astro.glob("./blog/*.md");
 
 allPosts.sort(
-  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+  (a, b) =>
+    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
 );
 
 const featured = allPosts.shift();
@@ -50,7 +51,7 @@ const featured = allPosts.shift();
     <PostPreview
       title={featured?.frontmatter.title || ""}
       image={featured?.frontmatter.image || ""}
-      date={new Date(featured?.frontmatter.date)}
+      date={new Date(featured?.frontmatter.pubDate)}
       summary={featured?.frontmatter.summary}
       link={featured?.url || ""}
       featured
@@ -63,7 +64,7 @@ const featured = allPosts.shift();
           <PostPreview
             title={p.frontmatter.title}
             image={p.frontmatter.image}
-            date={new Date(p.frontmatter.date)}
+            date={new Date(p.frontmatter.pubDate)}
             summary={p.frontmatter.summary}
             link={p.url || ""}
           />
