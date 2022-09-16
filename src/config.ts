@@ -13,36 +13,33 @@ export const NAV_ITEMS = [
   },
 ];
 
-export const SOCIAL_MEDIA_ITEMS = {
-  twitter: {
+export const SOCIAL_MEDIA_ITEMS = [
+  {
     path: '#',
     title: 'Twitter',
     iconClass: 'fa-twitter',
   },
-  facebook: {
+  {
     path: '#',
     title: 'Facebook',
     iconClass: 'fa-facebook-f',
   },
-  instagram: {
+  {
     path: '#',
     title: 'Instagram',
     iconClass: 'fa-instagram',
   },
-  github: {
+  {
     path: '#',
     title: 'GitHub',
     iconClass: 'fa-github',
   },
-};
+];
 
 export const SITE = {
   name: 'Massively for Astro',
   title: 'Massively for Astro',
-  description:
-    'A free, fully responsive HTML5 + CSS3 site template, ported to Astro',
+  description: 'A free, fully responsive HTML5 + CSS3 site template, ported to Astro',
   url: 'https://astro-massively.darko.io',
   githubUrl: 'https://github.com/DBozhinovski/astro-massively',
 };
-
-export const ENABLE_ANIMATION = true;

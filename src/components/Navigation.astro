@@ -18,6 +18,17 @@ const { pathname } = url;
     }
   </ul>
   <ul class="icons">
+    {
+      SOCIAL_MEDIA_ITEMS.map((item) => {
+        return (
+          <li>
+            <a href={item.path} class={`icon brands ${item.iconClass}"`}>
+              <span class="label">{item.title}</span>
+            </a>
+          </li>
+        );
+      })
+    }
     <li>
       <a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
     </li>

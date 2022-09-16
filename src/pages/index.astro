@@ -1,9 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
 import Pagination from '../components/Pagination.astro';
 import PostPreview from '../components/PostPreview.astro';
-import IntroHeader from '../components/IntroHeader.astro';
 
 const allPosts = await Astro.glob('./blog/*.md');
 
@@ -12,10 +10,7 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontma
 const featured = allPosts.shift();
 ---
 
-<Layout title="Massively by HTML5 UP - Astro port">
-  <IntroHeader intro />
-  <Navigation />
-
+<Layout title="Massively by HTML5 UP - Astro port" intro>
   <div id="main">
     <!-- Featured Post -->
     <PostPreview

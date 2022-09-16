@@ -1,17 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
 import Post from '../components/Post.astro';
-import IntroHeader from 'src/components/IntroHeader.astro';
 
 const { frontmatter, compiledContent } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <IntroHeader />
-
-  <Navigation />
-
   <!-- Main -->
   <div id="main">
     <Post

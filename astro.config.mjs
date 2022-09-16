@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import { SITE } from './src/config';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -9,4 +10,5 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
   },
+  site: SITE.url,
 });
