@@ -43,3 +43,10 @@ export const SITE = {
   url: 'https://astro-massively.darko.io',
   githubUrl: 'https://github.com/DBozhinovski/astro-massively',
 };
+
+export const CONTACT = {
+  address: ['1234 Somewhere Road #87257 Nashville', 'TN 00000-0000'],
+  phone: '(000) 000-0000',
+  email: 'info@untitled.tld',
+  formSubmitUrl: '/',
+};
