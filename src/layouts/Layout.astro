@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 import '../styles/sass/main.scss';
+import { SITE } from 'src/config';
 
 export interface Props {
   title: string;
@@ -27,7 +28,7 @@ const { title, intro } = Astro.props;
     />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="is-preload">
     <main>
       <!-- Wrapper -->
       <div id="wrapper" class="fade-in">
@@ -37,12 +38,11 @@ const { title, intro } = Astro.props;
         <Footer />
         <div id="copyright">
           <ul>
-            <li>&copy; Untitled</li><li>
+            <li>&copy; {SITE.title}</li><li>
               Design: <a href="https://html5up.net">HTML5 UP</a>
             </li>
           </ul>
         </div>
-        <div class="bg"></div>
       </div>
     </main>
   </body>
