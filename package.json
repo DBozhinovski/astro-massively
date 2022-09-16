@@ -1,7 +1,7 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
-  "private": true,
+  "name": "astro-massiely",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -15,10 +15,10 @@
     "@astrojs/sitemap": "^1.0.0",
     "astro": "^1.2.1",
     "astro-google-fonts-optimizer": "^0.2.1",
-    "date-fns": "^2.29.2",
-    "rollup": ">=2"
+    "date-fns": "^2.29.2"
   },
   "devDependencies": {
+    "rollup": ">=2",
     "prettier-plugin-astro": "^0.5.4",
     "sass": "^1.54.9"
   }

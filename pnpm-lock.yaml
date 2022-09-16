@@ -18,10 +18,10 @@ dependencies:
   astro: 1.2.5_sass@1.54.9
   astro-google-fonts-optimizer: 0.2.1
   date-fns: 2.29.3
-  rollup: 2.78.1
 
 devDependencies:
   prettier-plugin-astro: 0.5.4
+  rollup: 2.78.1
   sass: 1.54.9
 
 packages:
@@ -3196,7 +3196,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
