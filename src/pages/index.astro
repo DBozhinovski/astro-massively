@@ -1,16 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
-import Pagination from "../components/Pagination.astro";
-import PostPreview from "../components/PostPreview.astro";
-import IntroHeader from "../components/IntroHeader.astro";
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Pagination from '../components/Pagination.astro';
+import PostPreview from '../components/PostPreview.astro';
+import IntroHeader from '../components/IntroHeader.astro';
 
-const allPosts = await Astro.glob("./blog/*.md");
+const allPosts = await Astro.glob('./blog/*.md');
 
-allPosts.sort(
-  (a, b) =>
-    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
-);
+allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 
 const featured = allPosts.shift();
 ---
@@ -22,11 +19,11 @@ const featured = allPosts.shift();
   <div id="main">
     <!-- Featured Post -->
     <PostPreview
-      title={featured?.frontmatter.title || ""}
-      image={featured?.frontmatter.image || ""}
+      title={featured?.frontmatter.title || ''}
+      image={featured?.frontmatter.image || ''}
       date={new Date(featured?.frontmatter.pubDate)}
       summary={featured?.frontmatter.summary}
-      link={featured?.url || ""}
+      link={featured?.url || ''}
       featured
     />
 
@@ -39,7 +36,7 @@ const featured = allPosts.shift();
             image={p.frontmatter.image}
             date={new Date(p.frontmatter.pubDate)}
             summary={p.frontmatter.summary}
-            link={p.url || ""}
+            link={p.url || ''}
           />
         ))
       }

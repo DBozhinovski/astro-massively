@@ -1,13 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
-import Post from "../components/Post.astro";
-import IntroHeader from "src/components/IntroHeader.astro";
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Post from '../components/Post.astro';
+import IntroHeader from 'src/components/IntroHeader.astro';
 
 const { frontmatter, compiledContent } = Astro.props;
-
-// We can't really use the astro image integration otherwise -.-d
-const image = import(/* @vite-ignore */ `../images/${frontmatter.image}`);
 ---
 
 <Layout title={frontmatter.title}>
@@ -22,7 +19,7 @@ const image = import(/* @vite-ignore */ `../images/${frontmatter.image}`);
       title={frontmatter.title}
       summary={frontmatter.summary}
       contents={compiledContent()}
-      image={image as any as string}
+      image={frontmatter.image}
     />
   </div>
 </Layout>
