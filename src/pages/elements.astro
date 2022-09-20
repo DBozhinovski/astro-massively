@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
 ---
 
-<Layout title="Massively for Astro">
+<Layout title={SITE.title}>
   <div id="main">
     <section class="post">
       <h2>Text</h2>

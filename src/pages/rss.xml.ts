@@ -9,9 +9,9 @@ interface Post {
 export const get = () =>
   rss({
     // `<title>` field in output xml
-    title: 'Massively',
+    title: SITE.title,
     // `<description>` field in output xml
-    description: 'Massively port to astro',
+    description: SITE.description,
     // base URL for RSS <item> links
     // SITE will use "site" from your project's astro.config.
     site: SITE.url,

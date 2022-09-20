@@ -37,7 +37,6 @@ export const SOCIAL_MEDIA_ITEMS = [
 ];
 
 export const SITE = {
-  name: 'Massively for Astro',
   title: 'Massively for Astro',
   description: 'A free, fully responsive HTML5 + CSS3 site template, ported to Astro',
   url: 'https://astro-massively.darko.io',

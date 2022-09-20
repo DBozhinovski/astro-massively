@@ -1,4 +1,6 @@
 ---
+import { SITE } from 'src/config';
+
 const { intro } = Astro.props;
 ---
 
@@ -46,5 +48,5 @@ const { intro } = Astro.props;
 
 <!-- Header -->
 <header id="header">
-  <a href="/" class="logo">Massively</a>
+  <a href="/" class="logo">{SITE.title}</a>
 </header>

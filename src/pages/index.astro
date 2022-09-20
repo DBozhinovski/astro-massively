@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Pagination from '../components/Pagination.astro';
 import PostPreview from '../components/PostPreview.astro';
 
+import { SITE } from '../config';
+
 const allPosts = await Astro.glob('./blog/*.md');
 
 allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
@@ -10,7 +12,7 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontma
 const featured = allPosts.shift();
 ---
 
-<Layout title="Massively for Astro" intro>
+<Layout title={SITE.title} intro>
   <div id="main">
     <!-- Featured Post -->
     <PostPreview

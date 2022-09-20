@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Post from '../components/Post.astro';
+import { SITE } from '../config';
 ---
 
-<Layout title="Massively by HTML5 UP">
+<Layout title={SITE.title}>
   <!-- Main -->
   <div id="main">
     <Post

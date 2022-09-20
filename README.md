@@ -46,4 +46,6 @@ the intro header/logo transition. They can be easily disabled, however, if you'd
 
 Title, navigation links, social media links, URL etc. can be customized from the `./src/config.ts` file.
 
+Changing these allows you to easily have a ready-to-deploy webpage without touching any code.
+
 ## Development and customization notes
