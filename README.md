@@ -95,3 +95,8 @@ Some of the basic building blocks of the template have already been separated as
 `./src/`components/` directory and can be easily re-used for any customization.
 
 ### Removing attribution
+
+This theme was originally published as a template on [HTML5 UP](https://html5up.net), under the
+[Creative Commons license](https://html5up.net/license). This port contains that info and attributes the author
+accordingly. The original author allows for non-attribution use of the templates via
+[https://pixelarity.com](https://pixelarity.com).
