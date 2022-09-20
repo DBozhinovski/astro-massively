@@ -40,7 +40,8 @@ TL;DR; Clone -> install -> ? -> profit. Standard Astro stuff.
 
 In addition to the run-of-the-mill Astro project structures, you can find a `/scripts` directory in `/src`. These are
 the animation scripts ported over from the original theme. They enable some features, such as the parallax effect for
-the intro header/logo transition. They can be easily disabled, however, if you'd like to have a JS-less page.
+the intro header/logo transition. They can be easily disabled, however, if you'd like to have a JS-less page (see
+below).
 
 ## General Configuration
 
@@ -48,4 +49,49 @@ Title, navigation links, social media links, URL etc. can be customized from the
 
 Changing these allows you to easily have a ready-to-deploy webpage without touching any code.
 
+### A note on the logo
+
+The logo past the intro animation is just the text of the web page's title (found inside `./src/config.ts`). If you need
+to change that, it's enough to just add an image (or otherwise, customize the markup) in
+`./src/components/IntroHeader.astro`. The element that needs it's markup changed is `<header id="header">...</header>`.
+
+Any method of [importing images available in Astro](https://docs.astro.build/en/guides/images/) should do the trick.
+
 ## Development and customization notes
+
+### Removing the animation for a fully static, zero JS site
+
+The original template design has a jQuery-based 😧 parallax animation, that makes the site more of an eye-candy. Of
+course, it looks fairly decent without that animation as well. Disabling it is pretty easy:
+
+1. Remove all `<script>` tags from `./src/components/IntroHeader.astro`
+2. Remove the conditional element that renders if there's an intro prop passed to the component.
+3. As a bonus, if you'd like to keep it lighter in your site's repo, you can also remove the entire `./src/scripts`
+   directory.
+
+Initially, I planned on porting the animation to something lighter, ideally vanilla JS. I still plan on doing it, but it
+turned out not to be as trivial as I'd initially hoped. PRs are also welcome 😊.
+
+### Styling
+
+All styles can be found inside `./src/styles/sass`. They aren't changed much from what the original author did with
+them, except customizing a few arithmetic operations to fix some SASS warnings.
+
+The structure is fairly standard and what you'd expect to find in a regular SASS-based project.
+
+### JavaScript
+
+As briefly mentioned above, the only piece of JS on the page, the animation, is based on jQuery. Some modifications had
+to be made to the scripts to make them work as modules so that Astro can optimize them, but other than that they are
+true to the original. They could do with a more "modern" touch, so PRs are welcome.
+
+### Components
+
+The original template offers a fairly rich set of components, in the sense that it has a bunch of HTML blocks
+pre-styled. These offer a solid base for creating anything custom in the style of the template. Have a look at
+[/generic](https://astro-massively.darko.io/generic/) and [/elements](https://astro-massively.darko.io/elements/).
+
+Some of the basic building blocks of the template have already been separated as Astro components in the
+`./src/`components/` directory and can be easily re-used for any customization.
+
+### Removing attribution
