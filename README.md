@@ -25,11 +25,18 @@ Astroize it further.
 
 ---
 
+## Quickstart
+
+1. Run `npx degit https://github.com/DBozhinovski/astro-massively my-site-name` to get a "clean slate" copy of this
+   repo.
+2. Run `npm install` inside the cloned directory to install dependencies.
+3. Customize and deploy!
+
 ## Features
 
 - Easily customizable for many use cases
 - Consistent look and feel
-- Uses `astro 1.2.1`
+- Uses `astro 1.2.1` and should be able to support newer ones easily.
 - Huge set of components to fit any type of site (see the `/elements` page)
 - REALLY backward compatible - the design and styles were built a while ago :sweat_smile:
 - Sitemap, RSS feed, Google Fonts Optimizer...
@@ -84,6 +91,11 @@ The structure is fairly standard and what you'd expect to find in a regular SASS
 As briefly mentioned above, the only piece of JS on the page, the animation, is based on jQuery. Some modifications had
 to be made to the scripts to make them work as modules so that Astro can optimize them, but other than that they are
 true to the original. They could do with a more "modern" touch, so PRs are welcome.
+
+### Favicon
+
+Replace the `./public/favicon.svg` with your own `favicon.svg` file or change both the extension and the file inside
+`./src/layouts/Layout.astro`, line 24.
 
 ### Components
 
