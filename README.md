@@ -36,7 +36,7 @@ Astroize it further.
 
 - Easily customizable for many use cases
 - Consistent look and feel
-- Uses `astro 1.2.1` and should be able to support newer ones easily.
+- Uses `astro 3.0.13` and should be able to support newer ones easily.
 - Huge set of components to fit any type of site (see the `/elements` page)
 - REALLY backward compatible - the design and styles were built a while ago :sweat_smile:
 - Sitemap, RSS feed, Google Fonts Optimizer...
